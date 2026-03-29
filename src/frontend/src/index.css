@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.625rem;
+    /* Navy dark theme */
+    --background: 0.97 0.008 240;
+    --foreground: 0.18 0.04 240;
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.04 240;
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.04 240;
+    --primary: 0.18 0.06 240;
+    --primary-foreground: 1 0 0;
+    --secondary: 0.93 0.03 82;
+    --secondary-foreground: 0.18 0.04 240;
+    --muted: 0.94 0.01 240;
+    --muted-foreground: 0.5 0.03 240;
+    --accent: 0.7 0.12 75;
+    --accent-foreground: 0.18 0.04 240;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.88 0.02 240;
+    --input: 0.88 0.02 240;
+    --ring: 0.7 0.12 75;
+    /* App-specific tokens */
+    --navy: 0.18 0.06 245;
+    --navy-deep: 0.14 0.055 245;
+    --teal: 0.42 0.09 200;
+    --gold: 0.7 0.12 75;
+    --gold-dark: 0.6 0.14 72;
+    --user-bubble: 0.5 0.18 264;
+    --ai-card: 0.93 0.04 82;
+    --page-bg: 0.97 0.008 240;
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.985 0 0;
+    --sidebar-foreground: 0.145 0 0;
+    --sidebar-primary: 0.205 0 0;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.97 0 0;
+    --sidebar-accent-foreground: 0.205 0 0;
+    --sidebar-border: 0.922 0 0;
+    --sidebar-ring: 0.708 0 0;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-jakarta;
+  }
+}
+
+@layer utilities {
+  .bg-navy {
+    background-color: oklch(var(--navy));
+  }
+  .bg-navy-deep {
+    background-color: oklch(var(--navy-deep));
+  }
+  .bg-teal {
+    background-color: oklch(var(--teal));
+  }
+  .text-gold {
+    color: oklch(var(--gold));
+  }
+  .bg-gold {
+    background-color: oklch(var(--gold));
+  }
+  .bg-user-bubble {
+    background-color: oklch(var(--user-bubble));
+  }
+  .bg-ai-card {
+    background-color: oklch(var(--ai-card));
+  }
+  .border-gold {
+    border-color: oklch(var(--gold));
+  }
+  .text-navy {
+    color: oklch(var(--navy));
+  }
+  .hero-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(var(--navy-deep)) 0%,
+      oklch(0.22 0.08 245) 40%,
+      oklch(0.3 0.09 210) 70%,
+      oklch(var(--teal)) 100%
+    );
+  }
+  .gold-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(var(--gold)) 0%,
+      oklch(var(--gold-dark)) 100%
+    );
+  }
+  .scroll-smooth-always {
+    scroll-behavior: smooth;
+  }
+}
